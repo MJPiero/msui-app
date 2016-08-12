@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>webapp</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./build/css/app.min.css">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="page" id="page-index">
+    <!-- header -->
+    <header class="header bar bar-nav">
+        <div class="counter pull-left">
+            <span class="nums"><i class="num-0"></i></span>
+            <span class="nums"><i class="num-1"></i></span>
+            <span class="nums"><i class="num-2"></i></span>
+            <span class="nums"><i class="num-3"></i></span>
+            <span class="nums"><i class="num-4"></i></span>
+            <span class="nums"><i class="num-5"></i></span>
+            <span class="nums"><i class="num-6"></i></span>
+            <span class="nums"><i class="num-7"></i></span>
+            <span class="no-bg">善</span>
+            <span class="no-bg">款</span>
+        </div>
+        <a class="icon icon-me pull-right"></a>
+    </header>
+
+    <!-- footer -->
+    <nav class="footer bar bar-tab">
+        <span class="main-button open-donate"><i class="fa fa-heart-o"></i>日行一善</span>
+    </nav>
+
+    <!-- main content -->
+    <div class="content">
+        <div class="banner-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./build/images/banner1.png" alt=""></div>
+                <div class="swiper-slide"><img src="./build/images/banner1.png" alt=""></div>
+                <div class="swiper-slide"><img src="./build/images/banner1.png" alt=""></div>
+            </div>
+            <div class="banner-pagination"></div>
+        </div>
+        <div class="buttons-tab fixed-tab" data-offset="44">
+            <a href="#tab1" class="tab-link active button">今日行善</a>
+            <a href="#tab2" class="tab-link button">本月排行</a>
+            <a href="#tab3" class="tab-link button">总排行</a>
+        </div>
+
+        <div class="tabs">
+            <div id="tab1" class="tab infinite-scroll infinite-scroll-bottom active"  data-distance="50">
+                <div class="list-block">
+                    <ul class="list-container">
+
+                    </ul>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader">
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab infinite-scroll infinite-scroll-bottom"  data-distance="100">
+                <div class="list-block">
+                    <ul class="list-container">
+                    </ul>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab3" class="tab infinite-scroll infinite-scroll-bottom"  data-distance="100">
+                <div class="list-block">
+                    <ul class="list-container">
+                    </ul>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- donate Popup -->
+<div class="popup popup-donate">
+    <header>
+        <span class="pull-left">请输入捐款金额</span>
+        <a href="#" class="pull-right close-popup"><i class="fa fa-close"></i></a>
+    </header>
+    <div class="content-block">
+        <div class="row money">
+            <div class="col-20 select"><span><i class="fa fa-check"></i></span><i class="num">2</i>元</div>
+            <div class="col-20"><span><i class="fa fa-check"></i></span><i class="num">5</i>元</div>
+            <div class="col-20"><span><i class="fa fa-check"></i></span><i class="num">10</i>元</div>
+            <div class="col-20"><span><i class="fa fa-check"></i></span><i class="num">50</i>元</div>
+        </div>
+        <div class="money-other">
+            <label for="moneynum" class="pull-right">元</label>
+            <input name="money" id="moneynum" type="text" placeholder="其他">
+        </div>
+        <div class="send-money">立即捐款</div>
+        <div class="tip">
+            <span><input type="checkbox"></span>
+            <span>同意并接受 <a href="#">《公益用户协议》</a></span>
+        </div>
+    </div>
+</div>
+
+<script src="./build/js/app.min.js"></script>
+<script src="./build/js/main.js"></script>
+</body>
+</html>

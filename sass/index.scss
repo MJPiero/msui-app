@@ -1,0 +1,270 @@
+@import "default";
+
+body{
+  font-size: .62rem;
+}
+
+#page-index{
+  .header{
+    background: #f7f6f2;
+    height: PageSize(106px);
+    line-height: PageSize(106px);
+    .icon{
+      color: #54504d;
+    }
+    .counter{
+      display: inline-block;
+      width: 60%;
+      height: PageSize(56px);
+      line-height: PageSize(56px);
+      margin-top: PageSize(25px);
+      span{
+        width: PageSize(30px);
+        height: 100%;
+        display: inline-block;
+        float: left;
+        margin-right: PageSize(10px);
+        &.nums{
+          @include background(image_url("num-bg.png") no-repeat center top);
+          @include background-size(100%);
+          i{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            @include background(image_url("num.png") no-repeat);
+            @include background-size(100%);
+            background-position: 0 0 ;
+            @include transition($DefaultTransition);
+            @for $n from 0 through 9{
+              &.num-#{$n}{
+                $y: PageSize(-37.5px) * $n;
+                background-position: 0 $y;
+              }
+            }
+          }
+        }
+        &.no-bg{
+          @include background(none);
+          font-size: .5rem;
+          margin-right: 0;
+          color: #9fa1a0;
+        }
+      }
+    }
+  }
+  .footer{
+    text-align: center;
+    line-height: 2.5rem;
+    .main-button{
+      @include ButtonStyle(#ff6711,90%,true);
+      color: #fff;
+      .fa-heart-o{
+        margin-right: .3rem;
+      }
+    }
+  }
+
+  .content{
+    background: #fff;
+    overflow-x: hidden;
+    .banner-swiper{
+      width: 100%;
+      height: PageSize(290px);
+      position: relative;
+      border-bottom: #eae8d9 solid 2px;
+      overflow: hidden;
+      .banner-pagination{
+        width: auto;
+        position: absolute;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        .swiper-pagination-bullet-active{
+          background: #ff6711 ;
+        }
+      }
+      .swiper-slide{
+        img{
+          width: 100%;
+        }
+      }
+    }
+
+    .buttons-tab{
+      .button{
+        height: 100%;
+        height: PageSize(76px);
+        line-height: PageSize(76px);
+        font-size: .62rem;
+        &.active{
+          color: #ff6711;
+          border-color: #ff6711;
+        }
+      }
+    }
+    .tabs{
+      .tab{
+        position: relative;
+        .list-block{
+          margin-top: 0;
+          .list-container{
+            li{
+              width: 100%;
+              height: PageSize(151px);
+              .user-container{
+                width: 95%;
+                margin-left: 5%;
+                height: 100%;
+                border-bottom: #e7e7e7 solid 1px;
+                padding: PageSize(20px) 0;
+                .col-20{
+                  text-align: left;
+                  .user-img{
+                    width: PageSize(100px);
+                    height: PageSize(100px);
+                    display: inline-block;
+                    @include border-radius(10px);
+                    overflow: hidden;
+                    img{
+                      width: 100%;
+                      vertical-align: middle;
+                    }
+                  }
+                }
+                .user-info{
+                  height: 100%;
+                  h3{
+                    margin: 0;
+                    font-size: .62rem;
+                    letter-spacing: 2px;
+                  }
+                  p{
+                    margin: .3rem 0 0 0;
+                    font-size: .62rem;
+                    color: #9fa1a0;
+                    i{
+                      font-style: normal;
+                      &.num{
+                        color: #ff6711;
+                      }
+                      &.fa-heart-o{
+                        color: #ff6711;
+                        margin-right: .2rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// popup donate
+.popup-donate{
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  header{
+    height: PageSize(83px);
+    line-height: PageSize(83px);
+    border-bottom: #d3d3d3 solid 1px;
+    padding: 0 .5rem;
+    .close-popup{
+      width: 1rem;
+      text-align: center;
+      .fa-close{
+        color: #000;
+      }
+    }
+  }
+  .content-block{
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .money{
+    width: 95%;
+    margin: 0 auto;
+    .col-20{
+      width: 22%;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      border: #9fa1a0 solid 1px;
+      @include border-radius(5px);
+      overflow: hidden;
+      position: relative;
+      &:nth-child(1){
+        margin: 0;
+      }
+      span{
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: .8rem solid #ff6711;
+        border-left: .8rem solid transparent;
+        color: #fff;
+        right: 0;
+        top: 0;
+        display: none;
+        .fa{
+          position: absolute;
+          left: -.5rem;
+          top: -.8rem;
+        }
+      }
+      .num{
+        font-style: normal;
+        margin: 0 .1rem;
+        color: #ff6711;
+      }
+      &.select{
+        border-color: #ff6711;
+        span{
+          display: inherit;
+        }
+      }
+    }
+  }
+
+  .money-other{
+    width: 95%;
+    margin: 1rem auto;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border: #9fa1a0 solid 1px;
+    @include border-radius(5px);
+    padding: 0 .5rem;
+    overflow: hidden;
+    input{
+      border: none;
+      width: 80%;
+      height: 90%;
+      margin-left: .5rem;
+      font-size: .62rem;
+      float: left;
+    }
+  }
+
+  .send-money{
+    @include ButtonStyle(#ff6711,90%,true);
+    color: #fff;
+  }
+
+  .tip{
+    width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+    span{
+      margin: 0 3px;
+    }
+  }
+}
+
