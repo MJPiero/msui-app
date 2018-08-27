@@ -1,4 +1,7 @@
 # msui-app
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/MJPiero/msui-app.svg)](https://greenkeeper.io/)
+
 A webapp made with SUI-Mobile
 
 用SUI-Mobile做的一个webapp,单单一个简单的展示。
